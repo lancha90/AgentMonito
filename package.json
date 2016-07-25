@@ -1,0 +1,22 @@
+{
+  "name": "Log",
+  "description": "Agente de monitoreo de servidores",
+  "version": "0.0.1",
+  "keywords": [
+    "logs",
+    "monitoring",
+    "realtime",
+    "socket.io"
+  ],
+  "author": "Diego Mauricio Herrera Alzate <diego.herrera@ingeneo.com.co> <diegomao627@gmail.com>",
+  "dependencies": {
+    "express.io": "~1.1.13",
+    "mongoose": "*",
+    "swig": "~1.0.0",
+    "tail": "*",
+    "node-schedule": "*",
+    "i18n": "~0.4.1",
+    "form-data": "~0.1.2",
+    "nodemailer": "~0.6.0"
+  }
+}

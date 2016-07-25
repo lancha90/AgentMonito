@@ -1,0 +1,42 @@
+{% extends 'template.html' %}
+{% block title %}{{__('title')}}{% endblock %}
+
+{% block head %}
+    <script type="text/javascript" src="/js/applications.js"></script>
+{% endblock %}
+{% block menu %}
+	<aside class="vert-nav">
+		<div class="scroll">
+			<ul>
+			{% for item in app %}
+				<li class="title"><a>{{ item.name }}</a></li>
+				{% set parent = loop.index %}
+				<li class="subtitle"><a>{{__('logs')}}</a></li>
+
+				{% for log in item.logs %}
+					<li class="log" app="{{parent}}" log="{{loop.index}}" ><a>{{ log.name }}</a></li>
+				{% endfor %}
+
+				<li class="subtitle"><a>Servicios</a></li>
+				<li app="{{parent}}" class="service_status"><a>{{__('applications_state')}}</a></li>
+				<li app="{{parent}}" class="service_report"><a>{{__('applications_report')}}</a></li>
+			{% endfor %}
+			</ul>
+		</div>
+	</aside>
+{% endblock %}
+
+{% block container %}
+	<div class='container_input'>
+		<div id="log_filter_div">
+			<a>{{__('filter')}}</a>
+			<input type="text" id="log_filter_input">
+		</div>
+		<div id="log_filter_button">
+			<a>{{__('filterbutton')}}</a>
+		</div>
+	</div>
+	
+	<div id="container_log">
+	</div>
+{% endblock %}

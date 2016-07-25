@@ -1,0 +1,44 @@
+{% extends 'template.html' %}
+{% block title %}Log{% endblock %}
+
+{% block head %}
+    <script type="text/javascript" src="/js/log.js"></script>
+{% endblock %}
+
+{% block container %}
+		<div>
+			<select id="select_type">
+				<option value="0">All</option>
+				<option value="1">Errors</option>
+				<option value="2">Warnings</option>
+				<option value="3">Debug</option>
+			</select>
+		</div>
+
+		<div id="applications">
+		</div>
+
+		<div class="results">
+			<div class="log error">
+				<p>
+		 			<strong>Errors: </strong>
+		 			<a id="num_error">0</a>
+				</p>
+			</div>
+			<div class="log warn">
+				<p>
+		 			<strong>Warnings: </strong>
+		 			<a id="num_warning">0</a>
+				</p>
+			</div>
+			<div class="log info">
+				<p>
+		 			<strong>Debug: </strong>
+		 			<a id="num_debug">0</a>
+				</p>
+			</div>
+		</div>
+
+		<div id="log">
+		</div>
+{% endblock %}

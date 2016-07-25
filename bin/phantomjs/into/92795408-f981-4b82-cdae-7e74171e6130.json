@@ -1,0 +1,1 @@
+{"chart":{"plotBackgroundColor":null,"plotBorderWidth":null,"plotShadow":false,"width":400,"height":400},"title":{"text":"map -hosts"},"subtitle":{"text":"/net"},"series":[{"type":"pie","name":"map -hosts","data":[["Used",100],["Free",0]]}]}

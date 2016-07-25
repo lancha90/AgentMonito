@@ -1,0 +1,33 @@
+{% extends 'template.html' %}
+{% block title %}{{__('title')}}{% endblock %}
+
+{% block head %}
+    <script type="text/javascript" src="/js/home.js"></script>
+{% endblock %}
+{% block container %}
+
+<div class="separator">
+	<h2 class="home_hostname"></h2>
+	<h2>:: {{__('cpu')}}</h2>
+</div>
+<div id="home_cpu">
+	<div>
+		<h3>{{__('arch')}}</h3>
+		<h4 id="home_arch"></h4>
+	</div>
+	<div>
+		<h3>{{__('count_cpu')}}</h3>
+		<h4 id="home_cpu_count"></h4>
+	</div>
+
+</div>
+<div class="separator">
+	<h2 class="home_hostname"></h2>
+	<h2>:: {{__('network')}}</h2>
+</div>
+<div id="home_net">
+	<h3>{{__('count_net')}}</h3>
+	<h3 id="home_net_count"></h3>
+</div>
+
+{% endblock %}

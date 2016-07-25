@@ -1,0 +1,52 @@
+{% extends 'template.html' %}
+{% block title %}Process{% endblock %}
+
+{% block head %}
+    <script type="text/javascript" src="/js/processdb.js"></script>
+{% endblock %}
+{% block menu %}
+<aside class="vert-nav">
+	<div class="scroll">
+		<ul>
+	    	<li class="title"><a>titulo</a></li>
+	    	<li class="subtitle"><a>{{__('resource')}}</a></li>
+			<li id="menu_storage" rel="/server/storage"><a>{{__('storage')}}</a></li>
+			<li id="menu_network" rel="/server/network"><a>{{__('network')}}</a></li>
+			<li id="menu_cpu" rel="/server/cpu"><a>{{__('cpu')}}</a></li>
+			<li id="menu_ram" rel="/server/ram"><a>{{__('memory')}}</a></li>
+
+			{% if isDatabase == 'TRUE' %}
+		    	<li class="subtitle"><a>{{__('dba')}}</a></li>
+				<li id="menu_tablespace" rel="/database/tablespace"><a>{{__('dba_tablespace')}}</a></li>
+				<li id="menu_process" class="select" rel="/database/processdb"><a>{{__('dba_process')}}</a></li>
+				<li id="menu_conecction" rel="/database/connects"><a>{{__('dba_connection')}}</a></li>
+				<li id="menu_transaction" rel="/database/transaction"><a>{{__('dba_transaction')}}</a></li>
+				<li id="menu_monitor" rel="/database/monitor"><a>{{__('dba_monitor')}}</a></li>
+			{% endif %}
+			
+			{% if isJboss == 'TRUE' %}
+		    	<li class="subtitle"><a>{{__('as_jboss')}}</a></li>
+				<li id="menu_jboss_instance" rel="/server/jboss_instance"><a>{{__('server_jboss_instance')}}</a></li>
+				<li id="menu_jboss_queue" rel="/server/jboss_queue"><a>{{__('server_jboss_queue')}}</a></li>
+				<li class="menu_jboss_jmx" app="JMX 1" rel="/server/jboss_jmx"><a>{{__('server_jboss_jmx')}}</a></li>
+			{% endif %}
+
+			{% if isGlassfish == 'TRUE' %}
+		    	<li class="subtitle"><a>{{__('as_glassfish')}}</a></li>
+			{% endif %}
+
+			{% if isWeblogic == 'TRUE' %}
+		    	<li class="subtitle"><a>{{__('as_weblogic')}}</a></li>
+
+		    	{% for server in serverList %}
+					<li id="node_{{ server._id.serverName }}" 
+						rel="/server/node?name={{server._id.serverName}}"><a>{{ server._id.serverName }}</a></li>
+				{% endfor %}
+			{% endif %}
+		</ul>
+	</div>
+</aside>
+{% endblock %}
+{% block container %}
+	<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+{% endblock %}

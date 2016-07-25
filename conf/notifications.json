@@ -1,0 +1,22 @@
+{
+	"from":{
+		"SMTP":{
+			"host": "smtp.gmail.com", 
+	    	"secureConnection": true,
+	    	"port": 465,
+		    "auth": {
+		        "user": "diegomao627@gmail.com",
+		        "pass": "Ing_dherrera_90"
+		    }
+		}
+	},
+	"filesystem":{
+		"from": "Diego Mauricio Herrera Alzate <diegomao627@gmail.com>",
+		"to": "diego.herrera@ingeneo.com.co",
+		"subject": "[Monitoring] - Filesystem",
+		"html": "<h1>Filesystem</h1><h2>Porcentaje de uso</h2><p>El porcentaje de uso del disco duro ha superado el 90% en la particion</p>"
+	},
+	"phantomjs": {
+		"macosx": "/bin/phantomjs/macosx/phantomjs"
+	}
+}

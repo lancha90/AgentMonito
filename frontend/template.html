@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<title>{% block title %}HallApps{% endblock %}</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" type="text/css" href="/css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+
+	<script type="text/javascript" src="/socket.io/socket.io.js"> </script>
+	<script type="text/javascript" src="/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/js/main.js"></script>
+	<script type="text/javascript" src="/js/highcharts.js"></script>
+    <script type="text/javascript" src="/js/exporting.js"></script>
+
+
+	{% block head %}
+	{% endblock %}
+</head>
+<body>
+	<header>
+		<a id="logo" href="/"><img src="/css/image/logo.png"></a>
+		<nav>
+			<ul>
+				<li id="menu_home" class="select"><a href="/">{{__('home')}}</a></li>
+				<li id="menu_server"><a href="/server">{{__('server')}}</a></li>
+				<li id="menu_applications"><a href="/applications">{{__('applications')}}</a></li>
+				<!--<li id="menu_log"><a href="/log">{{__('logs')}}</a></li>-->
+			</ul>
+		</nav>
+		<div class="lang">
+			<a rel="es"><img src="/css/image/es.ico"></a>
+			<a rel="en"><img src="/css/image/en.ico"></a>
+			<a rel="fr"><img src="/css/image/fr.ico"></a>
+		</div>
+	</header>
+	<!--aside class="breadcrumb">
+		<ul>
+			<li class="firts"><a href="/"><img src="/css/image/ico_home.png">Home</a></li>
+		</ul>
+	</aside-->
+	<section class="container">
+		{% block menu %}
+		{% endblock %}
+		<div class="wrapper">
+			{% block container %}
+			{% endblock %}
+		</div>
+	</section>
+</body>
+</html>

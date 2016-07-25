@@ -1,0 +1,1 @@
+{"chart":{"plotBackgroundColor":null,"plotBorderWidth":null,"plotShadow":false,"width":400,"height":400},"title":{"text":"devfs"},"subtitle":{"text":"/dev"},"series":[{"type":"pie","name":"devfs","data":[["Used",100],["Free",0]]}]}
